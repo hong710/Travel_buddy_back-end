@@ -18,6 +18,7 @@ class ActivitiesController < ApplicationController
         head :no_content
     end
 
+
     private
 
     def r_params
