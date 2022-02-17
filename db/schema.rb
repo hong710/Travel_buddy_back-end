@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_16_061803) do
+ActiveRecord::Schema[7.0].define(version: 2022_02_16_200349) do
+  create_table "activities", force: :cascade do |t|
+    t.string "name"
+    t.string "img"
+    t.string "address"
+    t.string "phone"
+    t.string "review"
+    t.string "category"
+    t.string "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "img"
@@ -22,9 +34,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_16_061803) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_attractions", force: :cascade do |t|
+  create_table "user_activities", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "activity_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_user_activities_on_activity_id"
+    t.index ["user_id"], name: "index_user_activities_on_user_id"
   end
 
   create_table "user_restaurants", force: :cascade do |t|

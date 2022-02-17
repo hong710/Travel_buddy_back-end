@@ -8,7 +8,7 @@ class Api::V1::UsersController < ApplicationController
 
     def show
         user = User.find(params[:id])
-        render json: user.restaurants, status: :ok
+        render json: user.activities, status: :ok
     end
         
     def create
@@ -25,8 +25,6 @@ class Api::V1::UsersController < ApplicationController
     def profile
         render json: @user
     end
-
-
     
     private
 

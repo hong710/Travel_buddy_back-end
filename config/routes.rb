@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  resources :activities, only: [:index, :create, :destroy, :show]
+  resources :user_activities, only: [:index, :create, :destroy, :show]
   resources :user_restaurants, only: [:index, :create, :destroy, :show]
-  resources :user_attractions
   resources :restaurants, only: [:index, :create, :destroy, :show]
 
 
