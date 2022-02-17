@@ -9,6 +9,7 @@ class CreateActivities < ActiveRecord::Migration[7.0]
       t.string :category
       t.string :city
       t.string :note
+      t.string :location_id
       t.timestamps
     end
   end
