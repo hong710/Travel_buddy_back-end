@@ -5,10 +5,17 @@ class ActivitiesController < ApplicationController
         render json: activity, status: :created
     end
 
+    def destroy
+        activity = Activity.find(params[:id])
+        activity.user_activities.destroy_all
+        activity.destroy
+        head :no_content
+    end
+
     private
 
     def r_params
-        params.permit(:name, :address, :img, :phone, :review, :category)
+        params.permit(:name, :address, :img, :phone, :review, :category, :city)
     end
 
     def invalid_record_res (invalid)

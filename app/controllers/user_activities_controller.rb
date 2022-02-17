@@ -5,6 +5,7 @@ class UserActivitiesController < ApplicationController
         render json: user_activity, status: :created
     end
 
+
     private
 
     def uc_param

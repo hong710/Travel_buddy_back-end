@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_16_200349) do
     t.string "phone"
     t.string "review"
     t.string "category"
+    t.string "city"
     t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
